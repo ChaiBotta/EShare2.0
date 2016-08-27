@@ -1,3 +1,425 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_0ffa1ba5bffe33fdc91c7719bb8189cfb5f8c21d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4b515e6e269bfe848f5b43ac09bce54d6617d4fd">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-9.2.1_72a12213017976291255db414e2f7f5e0161b421\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\libs\simpleUIv2.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e2bf25cce61c695f91b61fdb8363df763988032e">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\2\simpleUIv2_23e2972a5775c30a9e5f413014418eec5cb281ca\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2d55932b3b38a43e56ccb540b79836ca50ee446a">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b0e0da868c5310fa4eb33f7da4f1d1f7bfea7c3e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4c2b01baa64ba25f8dbdf7f7f828bc5664dab55e">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-9.2.1_40f60c95ed236c75fee5761a8759330a21c58564\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="36e2b438f9b0d68fb2482c8f389e249e32840cff">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.2.1_fddfc02aff5e2c0cd26b30118bfa5dac901fb98f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a65d98c9409f271d3209f4cc1f7d8e0391665fa5">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-9.2.1_efacdab4fc3708a37b87d1550caf26d521684782\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b24c1a80d8ccaecee7b8b80209b4e273dc22b14d">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.2.1_cdc3d80cbf93d4fd6189dcaf395704dde88e0bf3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="bbd51be332bace144b3d16501ec0af379c3c8750">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-9.2.1_340ee83be21d4b02cd7a53d117e9789a335142ff\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2506c5893e125e2f9cfc522378e893620c21b109">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.2.1_edccb58e5d6e0912b2d08d167129a7e6cc10fa27\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="05a2710d284c03087013a667a324c9e2aba5bc91">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.2.1_59e330518564a1dca65f1e9a57b2a3ec6d184c38\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_18657ecefaf5b898a6a5c7c45fc3d92899380803\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_7ab8bc83845eb7dd074dfece288738312d7c2071\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0765979e802b1669c90dc36076559461d5eb6ad1">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-9.2.1_4b6af66fa358540d99a6371e95cf43474b785897\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="05d2e01f33fb2097b51fce3f938dc37a75fe2d6b">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-9.2.1_f79b2714a7d64a5e4e965b43bcf6689193bd6487\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5337354083e89ed67151859ab0b6b80935c60eaf">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.2.1_5f96b47dc75ddb2e8794dacab96bfe4eab705dae\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="819c2c3a4fb135e085445d11131d069cf9c32b2a">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.2.1_2f359dcef74ca6c9ec3dd81faa73ef823deb61dd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="357a8702c49044417d4856861c8f435e7c74ef09">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-9.2.1_beab8168e084acc741561ae87e199337811a7394\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="310ef01419435979cc82847cf085799a8d00e7e9">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-9.2.1_d8f6bacf112432e4de79170631f9f678e0921b80\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0979debb5b4d955ddc0e80bb192f4f00c2f91750">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-9.2.1_e415e54de75bb2dcde9edc61c150eaf21823317e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_22cf715c74019698e812a083550b8b2436e2c379\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="def5530cb13311617fc8f962e2a90225bb6904e2">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-9.2.1_324bded7a858046f6de37a213196c3e21c90a3dc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f3b0ff905873c91ab64addba30cc1e77bed34c4d">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-9.2.1_2f54e61835f78e86ef4c7503d0ee9c00a1d0cade\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6d2f508d1a9fa0fbe1653595e484800c08afb42c">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-9.2.1_240403ab9599dfb5de514d6bba3ce028ad7a25b7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="89ab748a6c0ab6ac1d3671f2356d6181e8108bc5">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-9.2.1_fbda6d1daee52cfffe35aa487cdd31a1695e2034\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_8c194c628f3139f52dab02868dda8564ad12dea1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1141496362c8876f0da4b645fbaf22c0a3618372">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-9.2.1_cd36b1046cc9dea5523bf68192c3dc498ee7f3a8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="07c569a77f437c5c71eac8b1b636a50bebb69a93">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-9.2.1_8c3ff804741119c809d5445f3880491f35a15535\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3a42c5696fa39930d39770f7e5552a9c965fbe09">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.2.1_851579ca286d5ecb2cb41d450da0de8ee7bd45d4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ee19e33a798d11a5cf309a40155b8223fadcdeea">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-9.2.1_365b89491ade701af220bed7fbb8121dfc60ae24\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6b896c1067633db41e9c10a3a5d0919c5c4cfc8c">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.2.1_a3e014f021fdce06261c9672c1bc05002fd60fc5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="7bb417e9ac8645285342935679e75d371b58b62b">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-9.2.1_8fca6a9b52e61abc33a453a4477c788aadbb7f25\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9f2282b9fc24f24c69665032dede1bc7201cf006">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-9.2.1_0b5db3b1a77e99196a752d084831ec0ac36a30e6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6a0f2d219f82db499ac03d5a985c4eb3e83fc422">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.2.1_073661c44b5e57ede358789f9864dfd37375ff70\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\libs\droidar.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="98ad0ac0d5461b474056aebd4dc4ecfe3c733603">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\2\droidar_16f27342804d831c828ae2c16f5bc2b6a58d58ed\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="421b36cf4f0d3bbd75e8f28647fccf36674ef049">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.2.1_154c9b7f58bfc3c5372e2523065b173c9f98a239\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_ed0879d375cda837ba73a793e3def3cd90a98764\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="152cba5ca28fd4a5191a8577a0fa96d61122041e">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-9.2.1_b55ce240a48462a5b831ac8d3736da36f8cf643e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="35a01d7cb4ff6b5976777bf5827fd8f206fb8757">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.2.1_cec1e7ee3701b17ac50711284d445e928581fa5e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d41b5d21cc9dd7d210f0ae82ac509ba7f091d611">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.2.1_f432a1f1187d545efbc3141d728944947bd740d3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3627eacd7f7cafb5e8ae683992e7b2f9b7dcab1a">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.2.1_4710bbe2e8bc9ff76c322c8990e8c6f73d7cd5db\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e1bec33f1ec5367e25676638b430b9d585f3dbec">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-9.2.1_9c0fc9a5938760b3bb1c9f9b23ca21af42b1cbd4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="48917c60ea81213ea39cbd7123996a5401106dc3">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-9.2.1_63ebed1915f0015c360f53c167a7f53fca294c98\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="77e2e4803396fa79009ace04d9be84184aafcc31">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-9.2.1_0bd98bd5ba6a447fae5a7693189bbb87ad73563c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_53ee5fae304bfae1e9f6716b7b7781df7bb38ebc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-contextmanager\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ccc963cafe59ce185c49f47baff7eedcb8589bdf">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-contextmanager-9.2.1_275238c73328c39e44af52bb64c3c49abf60d00a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e719de687ac45141de3dd613907860a495580af0">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.2.1_f561c53a5fc6ab8f9937aba56d1ceb4f6483fc15\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ee409046028e5657a2a69edaa2eba00d6511a74c">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.2.1_43da65cc7d3225ddd5812ac60c30b7f51e843d13\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="87e004bd231ab67cb374ab4d636dc8d67c7daee9">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_998014afc37459d5444f13d22646248cd14e35da\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ac78f93fc89c497a65f9d9a352cd405996d2f65a">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.2.1_d5ee0c25e0162fbec2d68c1abbb921a11f98777c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="dd1907a2e855eeb2be8aa3486f3d4d4f1c8b22af">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-9.2.1_db594a3595d0b486331358db35e8855ccc053529\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f06a0705d7b8b9d18b00d056fe0e07bec75514e6">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-9.2.1_3df3a6b8b59f014d5f12390019d000bf3c112218\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="90eeba67a669f8fb24db0f821ef81703fe7a02bc">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-9.2.1_81f280493d45986bb8a64c7bd457d10611950857\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8aada8a0e9e9b3ecdda5e80f17c6a51a468e302a">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-9.2.1_df000671f5908beee19606df71527d5faafae9e7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="edf9a22ebf25281619265079aec8f5d433da1a5c">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-9.2.1_cbf1a707feb86fcd9312e09cc98338b388e52096\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-23.0.0_ef130d66668737124b313c5ae286ad92efef4251\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="428c9bac95b2f72921224e289553a04bea61cda5">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-9.2.1_03da48fca1df43d4611866cf4c6d670e24053fe5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d064f813cd835f17853e39221b247cf6a997a2db">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-9.2.1_49db8f305cd048acb5e98c01a6917555d8c6737e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="081ced8ab77e606b6743c27cfe93dc450447b046">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-9.2.1_a0d8fa872fe07c0cb2d9bc0ffaec2ea090edad32\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\9.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6c09228ff931eb30b68dd27fe34ed90d978b6892">
+        <dex dex="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-9.2.1_a7dbf0d370c4e697ad83058c4afec6f4f4f7c89c\classes.dex" />
+    </item>
+
+</items>
