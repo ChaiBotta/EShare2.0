@@ -1,5 +1,18 @@
 package de.rwth.setups;
 
+import android.app.Activity;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.MeasureSpec;
+import android.widget.Button;
+import android.widget.LinearLayout.LayoutParams;
+
+import actions.ActionMoveCameraBuffered;
+import actions.ActionRotateCameraBuffered;
+import actions.ActionWASDMovement;
+import commands.Command;
+import commands.ui.CommandShowToast;
+import de.rwth.R;
 import geo.GeoObj;
 import gl.Color;
 import gl.CustomGLSurfaceView;
@@ -23,20 +36,6 @@ import util.Vec;
 import worldData.Obj;
 import worldData.SystemUpdater;
 import worldData.World;
-import actions.ActionMoveCameraBuffered;
-import actions.ActionRotateCameraBuffered;
-import actions.ActionWASDMovement;
-import android.app.Activity;
-import android.view.Gravity;
-import android.view.View;
-import android.view.View.MeasureSpec;
-import android.widget.Button;
-import android.widget.LinearLayout.LayoutParams;
-
-import commands.Command;
-import commands.ui.CommandShowToast;
-
-import de.rwth.R;
 
 public class StaticDemoSetup extends Setup {
 
@@ -240,6 +239,7 @@ public class StaticDemoSetup extends Setup {
 
 		eventManager.addOnTrackballAction(new ActionMoveCameraBuffered(camera,
 				5, 25));
+
 
 	}
 

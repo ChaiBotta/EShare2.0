@@ -1,5 +1,16 @@
 package system;
 
+import android.R;
+import android.app.Activity;
+import android.location.Location;
+
+import actions.Action;
+import actions.ActionCalcRelativePos;
+import actions.ActionMoveCameraBuffered;
+import actions.ActionRotateCameraBuffered;
+import actions.ActionWASDMovement;
+import actions.ActionWaitForAccuracy;
+import commands.Command;
 import geo.GeoObj;
 import gl.CustomGLSurfaceView;
 import gl.GL1Renderer;
@@ -10,17 +21,6 @@ import util.Log;
 import util.Vec;
 import worldData.SystemUpdater;
 import worldData.World;
-import actions.Action;
-import actions.ActionCalcRelativePos;
-import actions.ActionMoveCameraBuffered;
-import actions.ActionRotateCameraBuffered;
-import actions.ActionWASDMovement;
-import actions.ActionWaitForAccuracy;
-import android.R;
-import android.app.Activity;
-import android.location.Location;
-
-import commands.Command;
 
 /**
  * This is an example how you can use the default setup: <br>
@@ -97,7 +97,7 @@ public abstract class DefaultARSetup extends Setup {
 				5, 25));
 		eventManager.addOnLocationChangedAction(new ActionCalcRelativePos(
 				world, camera));
-		minAccuracyAction = new ActionWaitForAccuracy(getActivity(), 24.0f, 10) {
+		minAccuracyAction = new ActionWaitForAccuracy(getActivity(), 24f, 10) {
 			@Override
 			public void minAccuracyReachedFirstTime(Location l,
 					ActionWaitForAccuracy a) {

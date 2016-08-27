@@ -1,6 +1,7 @@
-package de.rwth;
+package androidgati.eshare;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import commands.ui.CommandShowToast;
+import de.rwth.R;
 import de.rwth.setups.CollectItemsSetup;
 import de.rwth.setups.DebugSetup;
 import de.rwth.setups.FarAwayPOIScenarioSetup;
@@ -17,7 +19,6 @@ import de.rwth.setups.GraphCreationSetup;
 import de.rwth.setups.GraphMovementTestSetup;
 import de.rwth.setups.LargeWorldsSetup;
 import de.rwth.setups.LightningSetup;
-import de.rwth.setups.MyArSetup;
 import de.rwth.setups.PlaceObjectsSetup;
 import de.rwth.setups.PlaceObjectsSetupTwo;
 import de.rwth.setups.PositionTestsSetup;
@@ -43,7 +44,8 @@ public class TechDemoLauncher extends Activity {
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.demoselector);
-		ArActivity.startWithSetup(this, new MyArSetup());
+		//ArActivity.startWithSetup(this, new MyArSetup());
+		startActivity(new Intent(this, MapsActivity.class));
 
 	}
 
@@ -53,7 +55,6 @@ public class TechDemoLauncher extends Activity {
 		System.out.println("DemoScreen onResume");
 		LinearLayout l = ((LinearLayout) findViewById(R.id.demoScreenLinView));
 		l.removeAllViews();
-
 		showSetup("Demo Setup", new StaticDemoSetup());
 		showSetup("Animation Demo", new DebugSetup());
 		showSetup("Game Demo", new GameDemoSetup());
