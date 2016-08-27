@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 /**
  * Created by Chai on 27/08/2016.
  */
-public class MyLocationProvider implements LocationListener{
+public class MyLocationProvider implements LocationListener {
 
 
     private String locProvider;
@@ -26,7 +26,6 @@ public class MyLocationProvider implements LocationListener{
     private LocationManager locationManager;
     private Activity context;
     private Location currentLocation;
-    private Location oldLocation;
     private InotifyMapActivity notifier;
 
     public MyLocationProvider(Activity context, InotifyMapActivity notifier) {
@@ -42,7 +41,10 @@ public class MyLocationProvider implements LocationListener{
 
     public boolean startRegisterLocation() {
         if (locationManager != null) {
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
                 return false;
             } else {
                 locationManager.requestLocationUpdates(locProvider, 0, 0, this);
@@ -59,9 +61,9 @@ public class MyLocationProvider implements LocationListener{
     @Override
     public void onLocationChanged(Location location) {
         currentLocation = location;
-        LatLng pos = new LatLng(location.getLatitude(),location.getLongitude());
-        mapController.addMarker(new MarkerOptions().position(pos).title("Marker in Sydney"));
-        mapController.moveCamera(CameraUpdateFactory.newLatLng(pos));
+        LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
+        //mapController.addMarker(new MarkerOptions().position(pos).title("Marker in Sydney"));
+        //mapController.moveCamera(CameraUpdateFactory.newLatLng(pos));
         notifier.notifyLocationChanged(location);
     }
 
@@ -83,7 +85,6 @@ public class MyLocationProvider implements LocationListener{
     public void setMapController(GoogleMap mapController) {
         this.mapController = mapController;
     }
-
 
 
 }

@@ -1,9 +1,10 @@
-package androidgati.eshare;
+package androigati.eshare;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -14,22 +15,24 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import androigati.eshare.access.AccessManager;
+import androigati.eshare.model.Content;
 import androigati.eshare.utili.InotifyMapActivity;
 import androigati.eshare.utili.MyLocationProvider;
 import androigati.eshare.utili.NoticeDialogFragment;
 import de.rwth.R;
-import de.rwth.setups.MyArSetup;
-import system.ArActivity;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, NoticeDialogFragment.NoticeDialogListener, InotifyMapActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_ACCESS_GPS_LOCATION = 200;
     private GoogleMap mMap;
-    private MyLocationProvider locationprovider;
+    private MyLocationProvider locationProvider;
+    private boolean updateReceived = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        locationprovider = new MyLocationProvider(MapsActivity.this, this);
+        locationProvider = new MyLocationProvider(MapsActivity.this, this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        askPermission();
+        if (!checkEnableGPS()) {
+            showAlertDialog();
+        }
     }
 
     @Override
@@ -47,27 +59,56 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f));
-        locationprovider.setMapController(mMap);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        }
 
+        mMap.getUiSettings().setMapToolbarEnabled(false);
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f));
+        locationProvider.setMapController(mMap);
+
+        addContentOnMap();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        askPermission();
-        if (!CheckEnableGPS()) {
-            showAlertDialog();
-        }
+    private void addContentOnMap() {
+        new AsyncTask<Void, Void, Void>() {
+
+            List<Content> contentList;
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                contentList = AccessManager.getNearbyContent(null);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                if (!contentList.isEmpty()) {
+                    for (Content content : contentList) {
+                        LatLng pos = new LatLng(
+                                content.getPosition().getLat(),
+                                content.getPosition().getLng());
+
+                        mMap.addMarker(new MarkerOptions()
+                                .position(pos)
+                                .title(content.getTitle()));
+
+                        //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
+                    }
+                }
+            }
+        }.execute();
     }
 
     private void askPermission() {
-        if (locationprovider.startRegisterLocation() == false) {
+        if (!locationProvider.startRegisterLocation()) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
 
-                // Show an expanation to the user *asynchronously* -- don't block
+                // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
 
@@ -94,10 +135,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             case MY_PERMISSIONS_REQUEST_ACCESS_GPS_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
 
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
+                    mMap.setMyLocationEnabled(true);
 
                 } else {
                     askPermission();
@@ -111,7 +154,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    private boolean CheckEnableGPS() {
+    private boolean checkEnableGPS() {
         int off = 0;
         try {
             off = Settings.Secure.getInt(getContentResolver(), Settings.Secure.LOCATION_MODE);
@@ -141,21 +184,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         showAlertDialog();
     }
 
-    private boolean updateReceived = false;
-
     @Override
     public void notifyLocationChanged(Location newlocation) {
 
+        /*
         if (updateReceived == false) {
-            MyArSetup customSetup = new MyArSetup(locationprovider);
+            MyArSetup customSetup = new MyArSetup(locationProvider);
             List<Location> locs = new ArrayList<>();
             Location further = new Location(newlocation);
-            further.setLongitude(newlocation.getLongitude()-0.00001d);
-            further.setLatitude(newlocation.getLatitude()-0.00001d);
+            further.setLongitude(newlocation.getLongitude() - 0.00001d);
+            further.setLatitude(newlocation.getLatitude() - 0.00001d);
             locs.add(further);
             customSetup.setLocations(locs);
             ArActivity.startWithSetup(this, customSetup);
             updateReceived = true;
-        }
+        }*/
     }
 }
