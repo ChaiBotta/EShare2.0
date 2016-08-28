@@ -1,13 +1,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/content_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/map"
+        android:id="@+id/map_content_fragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="invisible"
         tools:context="androigati.eshare.MapsActivity" />
 
     <include
@@ -31,6 +38,17 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/icon_camera" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="switchView"
+        android:src="@drawable/icon_list" />
 
     <ImageView
         android:layout_width="65dp"

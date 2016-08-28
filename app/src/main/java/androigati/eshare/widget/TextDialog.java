@@ -18,10 +18,12 @@ public class TextDialog extends Dialog {
         super(context);
 
         getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        setContentView(R.layout.dialog_text);
+        setContentView(R.layout.content_text);
 
-        TextView contentText = (TextView) findViewById(R.id.dialog_text_text);
+        TextView contentTitle = (TextView) findViewById(R.id.content_text_title);
+        TextView contentText = (TextView) findViewById(R.id.content_text_text);
 
+        contentTitle.setText(content.getTitle());
         contentText.setText(content.getBody());
     }
 }

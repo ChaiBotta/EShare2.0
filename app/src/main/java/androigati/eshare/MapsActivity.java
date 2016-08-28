@@ -13,6 +13,10 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androigati.eshare.access.AccessManager;
+import androigati.eshare.adapter.ContentRecyclerViewAdapter;
 import androigati.eshare.model.Content;
 import androigati.eshare.utils.DimensionHelper;
 import androigati.eshare.utils.InotifyMapActivity;
@@ -50,7 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.map_content_fragment);
         mapFragment.getMapAsync(this);
         locationProvider = new MyLocationProvider(MapsActivity.this, this);
     }
@@ -80,10 +85,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f));
         locationProvider.setMapController(mMap);
 
-        addContentOnMap();
+        addContent();
     }
 
-    private void addContentOnMap() {
+    private void addContent() {
 
         new AsyncTask<Void, Void, Boolean>() {
 
@@ -150,11 +155,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         if (contentMarker != null)
                             markerClickListener.addMarker(contentMarker);
 
+                        ContentRecyclerViewAdapter contentRecyclerViewAdapter =
+                                new ContentRecyclerViewAdapter(contentList);
+                        RecyclerView contentRecyclerView = (RecyclerView) findViewById(R.id.content_recycler_view);
+                        contentRecyclerView.setLayoutManager(new LinearLayoutManager(MapsActivity.this));
+                        contentRecyclerView.setAdapter(contentRecyclerViewAdapter);
+
                         //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
                     }
                 }
             }
         }.execute();
+    }
+
+    public void switchView(View v) {
+        ImageView switchViewButton = (ImageView) v;
+        View mapView = findViewById(R.id.map_content_fragment);
+        if (mapView.getVisibility() == View.VISIBLE) {
+            mapView.setVisibility(View.INVISIBLE);
+            switchViewButton.setImageResource(R.drawable.icon_map);
+        } else {
+            mapView.setVisibility(View.VISIBLE);
+            switchViewButton.setImageResource(R.drawable.icon_list);
+        }
     }
 
     private void askPermission() {
