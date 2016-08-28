@@ -5,10 +5,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.TextUtils;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +14,6 @@ import actions.ActionCalcRelativePos;
 import actions.ActionMoveCameraBuffered;
 import actions.ActionRotateCameraBuffered;
 import actions.ActionWASDMovement;
-import androigati.eshare.utili.BitmapDecoder;
-import commands.ui.CommandShowToast;
-import de.rwth.R;
 import geo.GeoObj;
 import gl.CustomGLSurfaceView;
 import gl.GL1Renderer;
@@ -47,9 +41,18 @@ public class EShareSetup extends Setup {
     private ActionWASDMovement wasdAction;
     private ActionRotateCameraBuffered rotateAction;
 
-    private List<MyArSetup.Content> contents;
+    private List<Bitmap> images;
+    private List<String> msgs;
 
     public final int MAX_NUM_ELEMENTS = 20;
+
+
+    public EShareSetup(){
+        images = new ArrayList<Bitmap>();
+        msgs = new ArrayList<String>();
+
+
+    }
 
     @Override
     public void _a_initFieldsIfNecessary() {
@@ -65,8 +68,18 @@ public class EShareSetup extends Setup {
         world = new World(camera);
 
         List<MeshComponent> elements = new ArrayList<MeshComponent>();
+        int i=0;
+        for (Bitmap b: images
+             ) {
+            elements.add(makeImgMash("Image "+i, b));
+            i++;
+        }
 
-        //add elements
+        for (String msg: msgs
+                ) {
+            elements.add(makeTextMash(msg, objectFactory, camera));
+        }
+
 
         makeRing(world, elements, currentPosition, 0);
 
@@ -77,6 +90,14 @@ public class EShareSetup extends Setup {
 
     }
 
+
+    public void AddImg(Bitmap img){
+        images.add(img);
+    }
+
+    public void AddText(String text){
+        msgs.add(text);
+    }
 
 
     public MeshComponent makeImgMash(String name, Bitmap img){
