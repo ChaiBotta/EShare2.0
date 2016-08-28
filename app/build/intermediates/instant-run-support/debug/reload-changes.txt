@@ -1,3 +1,6 @@
+CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/androigati/eshare/MapsActivity$2$override.class
 CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/androigati/eshare/MapsActivity$override.class
 CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/androigati/eshare/MapsActivity$1$override.class
+CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/androigati/eshare/MapsActivity$1$1$override.class
 CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+CHANGED,/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/androigati/eshare/MapsActivity$OnContentMarkerClickListener$override.class

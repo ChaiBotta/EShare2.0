@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
@@ -30,6 +29,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private MyLocationProvider locationProvider;
     private boolean updateReceived = false;
+    private List<Content> contentList;
+    private Switch arSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map_content_fragment);
         mapFragment.getMapAsync(this);
         locationProvider = new MyLocationProvider(MapsActivity.this, this);
-        Switch arSwitch = (Switch) findViewById(R.id.ar_switch);
+        arSwitch = (Switch) findViewById(R.id.ar_switch);
+        arSwitch.setEnabled(false);
+
+        // Create global configuration and initialize ImageLoader with this config
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
+        ImageLoader.getInstance().init(config);
     }
 
     @Override
@@ -73,19 +81,49 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (!checkEnableGPS()) {
             showAlertDialog();
         }
-        Switch arSwitch = (Switch) findViewById(R.id.ar_switch);
         arSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    final Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
+                    new AsyncTask<Void, Void, Void>() {
+
+                        EShareSetup customSetup;
+
                         @Override
-                        public void run() {
-                            EShareSetup customSetup = new EShareSetup();
+                        protected Void doInBackground(Void... params) {
+                            customSetup = new EShareSetup();
+                            for (Content content : contentList) {
+                                final EShareSetup.ContentViewModel contentViewModel =
+                                        new EShareSetup.ContentViewModel();
+                                if (content.getType().equals("image")) {
+                                    contentViewModel.setType("image");
+                                    contentViewModel.setTitle(content.getTitle());
+                                    ImageLoader imageLoader = ImageLoader.getInstance();
+                                    contentViewModel.setImg(imageLoader.loadImageSync(content.getUrl()));
+                                } else if (content.getType().equals("text")) {
+                                    contentViewModel.setType("text");
+                                    contentViewModel.setBody(content.getBody());
+                                }
+                                if (contentViewModel.getType().equals("image")) {
+                                    if (contentViewModel.getTitle() != null
+                                            && contentViewModel.getImg() != null
+                                            && !contentViewModel.getTitle().isEmpty())
+                                        customSetup.AddElement(contentViewModel);
+                                } else if (contentViewModel.getType().equals("text")) {
+                                    if (contentViewModel.getBody() != null
+                                            && !contentViewModel.getBody().isEmpty())
+                                        customSetup.AddElement(contentViewModel);
+                                }
+                            }
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
                             ArActivity.startWithSetup(MapsActivity.this, customSetup);
                         }
-                    }, 500);
+                    }.execute();
+
                 }
             }
         });
@@ -115,7 +153,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         new AsyncTask<Void, Void, Boolean>() {
 
-            List<Content> contentList;
             Bitmap imageMarker, textMarker;
 
             @Override
@@ -183,6 +220,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         RecyclerView contentRecyclerView = (RecyclerView) findViewById(R.id.content_recycler_view);
                         contentRecyclerView.setLayoutManager(new LinearLayoutManager(MapsActivity.this));
                         contentRecyclerView.setAdapter(contentRecyclerViewAdapter);
+
+                        arSwitch.setEnabled(true);
                     }
                 }
             }
@@ -245,7 +284,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
-                return;
             }
             // other 'case' lines to check for other
             // permissions this app might request

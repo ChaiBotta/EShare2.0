@@ -52,16 +52,20 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_media_route_connecting_mono_light.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_dark.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_dark.xml"
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_list.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon_list.png"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/up2.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/up2.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_light.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_light.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/up2.png",
-        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/up2.png"
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/mr_ic_pause_dark.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_dark.xml"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_forward10.xml",
@@ -72,20 +76,20 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_text_cursor_material.xml"
-    },
-    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/starboxgreen.png",
         "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/starboxgreen.png"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_notification_pause.xml"
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_text_cursor_material.xml"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_skip_previous.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_expanded_controller_skip_previous.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_notification_pause.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_notification_pause.xml"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/starcirclegray.png",
@@ -124,12 +128,12 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_notification_small_icon.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/incorrectcirclegray.png",
-        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/incorrectcirclegray.png"
-    },
-    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_comment.png",
         "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon_comment.png"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/incorrectcirclegray.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/incorrectcirclegray.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/warningcirclegray.png",
@@ -184,6 +188,10 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/p1.png"
     },
     {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/image_gradient.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/image_gradient.xml"
+    },
+    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_text_light.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/drawable/common_plus_signin_btn_text_light.xml"
     },
@@ -228,12 +236,12 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/penguin64.png"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon2.png",
-        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon2.png"
-    },
-    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_rewind30.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_rewind30.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon2.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon2.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/down.png",
@@ -292,32 +300,24 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_expanded_controller_play.xml"
     },
     {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_forward30.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_forward30.xml"
+    },
+    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_pause.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_pause.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_share.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon_share.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_icon_light.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/res/drawable/common_plus_signin_btn_icon_light.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_forward30.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_forward30.xml"
-    },
-    {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_upcoming_stop.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.2.1/res/drawable/cast_ic_mini_controller_upcoming_stop.xml"
-    },
-    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_stop.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_stop.xml"
-    },
-    {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/pluscirclegray.png",
-        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/pluscirclegray.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_closed_caption.xml",
@@ -326,6 +326,14 @@
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/image_marker.png",
         "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/image_marker.png"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_stop.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_stop.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/pluscirclegray.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/pluscirclegray.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -340,16 +348,16 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_pause_large.xml"
     },
     {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_closed_caption.xml",
+        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_closed_caption.xml"
+    },
+    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_tab_indicator_material.xml"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/mr_ic_cast_light.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_cast_light.xml"
-    },
-    {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_closed_caption.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_closed_caption.xml"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/spaceship.png",
@@ -372,12 +380,12 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/logosmall.png",
-        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/logosmall.png"
-    },
-    {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_expanded_controller_skip_next.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_expanded_controller_skip_next.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/logosmall.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/logosmall.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_camera.png",
@@ -426,6 +434,10 @@
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_map.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon_map.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
@@ -520,8 +532,8 @@
         "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.4.0/res/drawable/cast_ic_mini_controller_skip_prev.xml"
     },
     {
-        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_upcoming_play.xml",
-        "source": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.2.1/res/drawable/cast_ic_mini_controller_upcoming_play.xml"
+        "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/icon_like.png",
+        "source": "/Users/antonello/Projects/EShare2.0/app/src/main/res/drawable/icon_like.png"
     },
     {
         "merged": "/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/merged/debug/drawable/cast_ic_mini_controller_skip_next.xml",

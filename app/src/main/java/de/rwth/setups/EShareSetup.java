@@ -41,20 +41,17 @@ import worldData.World;
  */
 public class EShareSetup extends Setup {
 
-    private  World world;
+    public final int MAX_NUM_ELEMENTS = 20;
+    private World world;
     private GLCamera camera;
-
     private ActionCalcRelativePos geoupdater;
     private ActionWASDMovement wasdAction;
     private ActionRotateCameraBuffered rotateAction;
-
     private List<ContentViewModel> contents;
 
-    public final int MAX_NUM_ELEMENTS = 20;
 
-
-    public EShareSetup(){
-        contents = new ArrayList<ContentViewModel>();
+    public EShareSetup() {
+        contents = new ArrayList<>();
 
     }
 
@@ -63,57 +60,6 @@ public class EShareSetup extends Setup {
 
     }
 
-    public static class ContentViewModel{
-        private String title;
-        private String body;
-        private String url;
-        private String type;
-
-        public Bitmap getImg() {
-            return img;
-        }
-
-        public void setImg(Bitmap img) {
-            this.img = img;
-        }
-
-        private Bitmap img;
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public String getBody() {
-            return body;
-        }
-
-        public void setBody(String body) {
-            this.body = body;
-        }
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-    }
-
-
-
     @Override
     public void _b_addWorldsToRenderer(GL1Renderer glRenderer, GLFactory objectFactory, GeoObj currentPosition) {
 
@@ -121,18 +67,18 @@ public class EShareSetup extends Setup {
         world = new World(camera);
 
         List<MeshComponent> elements = new ArrayList<MeshComponent>();
-        int i=0;
+        int i = 0;
 
 
-        for (ContentViewModel content: contents
-             ) {
+        for (ContentViewModel content : contents
+                ) {
 
-            switch (content.getType()){
+            switch (content.getType()) {
                 case "image":
                     elements.add(makeImgMash(content.title, content.getImg()));
                     break;
                 case "text":
-                    elements.add(makeTextMash(content.body, objectFactory,camera));
+                    elements.add(makeTextMash(content.body, objectFactory, camera));
                     break;
                 case "video":
                     break;
@@ -144,17 +90,14 @@ public class EShareSetup extends Setup {
         makeRing(world, elements, currentPosition, 0);
 
 
-
         glRenderer.addRenderElement(world);
 
 
     }
 
-
-    public void AddElement(ContentViewModel content){
+    public void AddElement(ContentViewModel content) {
         contents.add(content);
     }
-
 
     public MeshComponent makeImgMash(String name, Bitmap img) {
 
@@ -221,7 +164,6 @@ public class EShareSetup extends Setup {
         }
 
     }
-
 
     public void makeRing(World world, List<MeshComponent> elements, GeoObj currentPosition) {
 
@@ -307,5 +249,53 @@ public class EShareSetup extends Setup {
             }
         });
         overlayView.addView(switchView, layoutParams);
+    }
+
+    public static class ContentViewModel {
+        private String title;
+        private String body;
+        private String url;
+        private String type;
+        private Bitmap img;
+
+        public Bitmap getImg() {
+            return img;
+        }
+
+        public void setImg(Bitmap img) {
+            this.img = img;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
     }
 }
