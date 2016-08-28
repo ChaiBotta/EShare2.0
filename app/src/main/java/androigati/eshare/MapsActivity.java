@@ -1,6 +1,7 @@
 package androigati.eshare;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -85,6 +86,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
+                    final ProgressDialog progress = ProgressDialog
+                            .show(MapsActivity.this, "", "loading...", true);
                     new AsyncTask<Void, Void, Void>() {
 
                         EShareSetup customSetup;
@@ -120,6 +123,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         @Override
                         protected void onPostExecute(Void aVoid) {
+                            progress.dismiss();
                             ArActivity.startWithSetup(MapsActivity.this, customSetup);
                         }
                     }.execute();
