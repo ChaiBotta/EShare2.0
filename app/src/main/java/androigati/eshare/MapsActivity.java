@@ -24,6 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androigati.eshare.access.AccessManager;
@@ -33,6 +34,7 @@ import androigati.eshare.utils.InotifyMapActivity;
 import androigati.eshare.utils.MyLocationProvider;
 import androigati.eshare.utils.NoticeDialogFragment;
 import androigati.eshare.widget.ImageDialog;
+import androigati.eshare.widget.TextDialog;
 import de.rwth.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, NoticeDialogFragment.NoticeDialogListener, InotifyMapActivity {
@@ -117,21 +119,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (!successful)
                     Toast.makeText(MapsActivity.this, "Connection Error", Toast.LENGTH_SHORT).show();
                 else if (!contentList.isEmpty()) {
+
+                    OnContentMarkerClickListener markerClickListener = new OnContentMarkerClickListener(
+                            MapsActivity.this,
+                            contentList);
+                    mMap.setOnMarkerClickListener(markerClickListener);
+
                     for (Content content : contentList) {
                         LatLng pos = new LatLng(
                                 content.getPosition().getLat(),
                                 content.getPosition().getLng());
+                        Marker contentMarker = null;
 
-                        Marker contentMarker = mMap.addMarker(new MarkerOptions()
-                                .position(pos)
-                                .icon(BitmapDescriptorFactory.fromBitmap(imageMarker))
-                                .title(content.getTitle()));
+                        switch (content.getType()) {
 
+                            case "image":
+                                contentMarker = mMap.addMarker(new MarkerOptions()
+                                        .position(pos)
+                                        .icon(BitmapDescriptorFactory.fromBitmap(imageMarker))
+                                        .title(content.getTitle()));
+                                break;
+                            case "text":
+                                contentMarker = mMap.addMarker(new MarkerOptions()
+                                        .position(pos)
+                                        .icon(BitmapDescriptorFactory.fromBitmap(textMarker))
+                                        .title(content.getTitle()));
+                                break;
+                        }
 
-                        mMap.setOnMarkerClickListener(new OnContentMarkerClickListener(
-                                MapsActivity.this,
-                                contentMarker,
-                                content));
+                        if (contentMarker != null)
+                            markerClickListener.addMarker(contentMarker);
 
                         //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
                     }
@@ -241,27 +258,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public class OnContentMarkerClickListener implements GoogleMap.OnMarkerClickListener {
 
         private Context context;
-        private Content content;
-        private Marker contentMarker;
+        private List<Content> contentList;
+        private List<Marker> markerList;
 
-        public OnContentMarkerClickListener(Context context, Marker contentMarker, Content content) {
+        public OnContentMarkerClickListener(Context context, List<Content> contentList) {
             this.context = context;
-            this.contentMarker = contentMarker;
-            this.content = content;
+            this.contentList = contentList;
+            this.markerList = new ArrayList<>();
+        }
+
+        public void addMarker(Marker marker) {
+            markerList.add(marker);
         }
 
         @Override
         public boolean onMarkerClick(Marker marker) {
-            if (marker.equals(contentMarker)) {
-                switch (content.getType()) {
-                    case "image":
-                        ImageDialog imageDialog = new ImageDialog(context, content);
-                        imageDialog.show();
-                        break;
+            int i = 0;
+            for (Marker contentMarker : markerList) {
+                if (marker.equals(contentMarker)) {
+                    Content content = contentList.get(i);
+                    switch (content.getType()) {
+                        case "image":
+                            ImageDialog imageDialog = new ImageDialog(context, content);
+                            imageDialog.show();
+                            break;
+                        case "text":
+                            TextDialog textDialog = new TextDialog(context, content);
+                            textDialog.show();
+                            break;
+                    }
+                    return true;
                 }
-                return true;
-            } else
-                return false;
+                i++;
+            }
+            return false;
         }
     }
 }
