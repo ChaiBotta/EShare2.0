@@ -3,6 +3,8 @@ package androigati.eshare;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,11 +12,13 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -22,9 +26,10 @@ import java.util.List;
 
 import androigati.eshare.access.AccessManager;
 import androigati.eshare.model.Content;
-import androigati.eshare.utili.InotifyMapActivity;
-import androigati.eshare.utili.MyLocationProvider;
-import androigati.eshare.utili.NoticeDialogFragment;
+import androigati.eshare.utils.DimensionHelper;
+import androigati.eshare.utils.InotifyMapActivity;
+import androigati.eshare.utils.MyLocationProvider;
+import androigati.eshare.utils.NoticeDialogFragment;
 import de.rwth.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, NoticeDialogFragment.NoticeDialogListener, InotifyMapActivity {
@@ -74,19 +79,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void addContentOnMap() {
-        new AsyncTask<Void, Void, Void>() {
+
+        new AsyncTask<Void, Void, Boolean>() {
 
             List<Content> contentList;
+            Bitmap imageMarker, textMarker;
 
             @Override
-            protected Void doInBackground(Void... params) {
-                contentList = AccessManager.getNearbyContent(null);
-                return null;
+            protected Boolean doInBackground(Void... params) {
+                try {
+                    contentList = AccessManager.getNearbyContent(null);
+                } catch (Exception e) {
+                    return false;
+                }
+                imageMarker = BitmapFactory.decodeResource(getResources(),
+                        R.drawable.image_marker);
+                textMarker = BitmapFactory.decodeResource(getResources(),
+                        R.drawable.text_marker);
+                imageMarker = Bitmap.createScaledBitmap(
+                        imageMarker,
+                        DimensionHelper.dpToPx(30),
+                        DimensionHelper.dpToPx(30),
+                        false);
+                textMarker = Bitmap.createScaledBitmap(
+                        textMarker,
+                        DimensionHelper.dpToPx(30),
+                        DimensionHelper.dpToPx(30),
+                        false);
+                return true;
             }
 
             @Override
-            protected void onPostExecute(Void aVoid) {
-                if (!contentList.isEmpty()) {
+            protected void onPostExecute(Boolean successful) {
+                if (!successful)
+                    Toast.makeText(MapsActivity.this, "Connection Error", Toast.LENGTH_SHORT).show();
+                else if (!contentList.isEmpty()) {
                     for (Content content : contentList) {
                         LatLng pos = new LatLng(
                                 content.getPosition().getLat(),
@@ -94,6 +121,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         mMap.addMarker(new MarkerOptions()
                                 .position(pos)
+                                .icon(BitmapDescriptorFactory.fromBitmap(imageMarker))
                                 .title(content.getTitle()));
 
                         //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));

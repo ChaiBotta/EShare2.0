@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import java.util.List;
 
-import androigati.eshare.utili.BitmapDecoder;
+import androigati.eshare.utils.BitmapDecoder;
 import de.rwth.R;
 import geo.GeoObj;
 import gl.GL1Renderer;

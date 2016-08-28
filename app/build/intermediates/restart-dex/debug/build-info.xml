@@ -2,41 +2,59 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="22"
-    density="xxhdpi"
+    density="xhdpi"
     format="7"
-    timestamp="628800398761965" >
+    timestamp="63922189033859"
+    token="3508511420646992623" >
 
     <task
         name="javac"
-        duration="306" />
+        duration="492" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="11" />
+        duration="35" />
     <task
         name="verifier"
         duration="2" />
 
     <artifact
-        location="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
         type="DEX" />
 
-    <build timestamp="628640886946117" >
+    <build timestamp="60395098909818" >
         <artifact
-            location="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
+            location="/Users/antonello/Projects/EShare2.0/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="61613805455226" >
         <artifact
-            location="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
             type="DEX" />
     </build>
-    <build timestamp="628800398761965" >
+    <build timestamp="63352107043141" >
         <artifact
-            location="C:\Users\Chai\Desktop\HackTheCity\Examples\DroidAR1\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="63415351336453" >
+        <artifact
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="63616567586046" >
+        <artifact
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build timestamp="63922189033859" >
+        <artifact
+            location="/Users/antonello/Projects/EShare2.0/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
 
