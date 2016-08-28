@@ -41,22 +41,68 @@ public class EShareSetup extends Setup {
     private ActionWASDMovement wasdAction;
     private ActionRotateCameraBuffered rotateAction;
 
-    private List<Bitmap> images;
-    private List<String> msgs;
+    private List<ContentViewModel> contents;
 
     public final int MAX_NUM_ELEMENTS = 20;
 
 
     public EShareSetup(){
-        images = new ArrayList<Bitmap>();
-        msgs = new ArrayList<String>();
-
+        contents = new ArrayList<ContentViewModel>();
 
     }
 
     @Override
     public void _a_initFieldsIfNecessary() {
 
+    }
+
+    public static class ContentViewModel{
+        private String title;
+        private String body;
+        private String url;
+        private String type;
+
+        public Bitmap getImg() {
+            return img;
+        }
+
+        public void setImg(Bitmap img) {
+            this.img = img;
+        }
+
+        private Bitmap img;
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
     }
 
 
@@ -69,15 +115,22 @@ public class EShareSetup extends Setup {
 
         List<MeshComponent> elements = new ArrayList<MeshComponent>();
         int i=0;
-        for (Bitmap b: images
-             ) {
-            elements.add(makeImgMash("Image "+i, b));
-            i++;
-        }
 
-        for (String msg: msgs
-                ) {
-            elements.add(makeTextMash(msg, objectFactory, camera));
+
+        for (ContentViewModel content: contents
+             ) {
+
+            switch (content.getType()){
+                case "image":
+                    elements.add(makeImgMash(content.title, content.getImg()));
+                    break;
+                case "text":
+                    elements.add(makeTextMash(content.body, objectFactory,camera));
+                    break;
+                case "video":
+                    break;
+            }
+
         }
 
 
@@ -91,12 +144,8 @@ public class EShareSetup extends Setup {
     }
 
 
-    public void AddImg(Bitmap img){
-        images.add(img);
-    }
-
-    public void AddText(String text){
-        msgs.add(text);
+    public void AddElement(ContentViewModel content){
+        contents.add(content);
     }
 
 
