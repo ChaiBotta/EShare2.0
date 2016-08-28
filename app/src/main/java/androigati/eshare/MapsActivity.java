@@ -1,6 +1,7 @@
 package androigati.eshare;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -20,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
@@ -30,6 +32,7 @@ import androigati.eshare.utils.DimensionHelper;
 import androigati.eshare.utils.InotifyMapActivity;
 import androigati.eshare.utils.MyLocationProvider;
 import androigati.eshare.utils.NoticeDialogFragment;
+import androigati.eshare.widget.ImageDialog;
 import de.rwth.R;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, NoticeDialogFragment.NoticeDialogListener, InotifyMapActivity {
@@ -119,10 +122,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 content.getPosition().getLat(),
                                 content.getPosition().getLng());
 
-                        mMap.addMarker(new MarkerOptions()
+                        Marker contentMarker = mMap.addMarker(new MarkerOptions()
                                 .position(pos)
                                 .icon(BitmapDescriptorFactory.fromBitmap(imageMarker))
                                 .title(content.getTitle()));
+
+
+                        mMap.setOnMarkerClickListener(new OnContentMarkerClickListener(
+                                MapsActivity.this,
+                                contentMarker,
+                                content));
 
                         //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
                     }
@@ -227,5 +236,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ArActivity.startWithSetup(this, customSetup);
             updateReceived = true;
         }*/
+    }
+
+    public class OnContentMarkerClickListener implements GoogleMap.OnMarkerClickListener {
+
+        private Context context;
+        private Content content;
+        private Marker contentMarker;
+
+        public OnContentMarkerClickListener(Context context, Marker contentMarker, Content content) {
+            this.context = context;
+            this.contentMarker = contentMarker;
+            this.content = content;
+        }
+
+        @Override
+        public boolean onMarkerClick(Marker marker) {
+            if (marker.equals(contentMarker)) {
+                switch (content.getType()) {
+                    case "image":
+                        ImageDialog imageDialog = new ImageDialog(context, content);
+                        imageDialog.show();
+                        break;
+                }
+                return true;
+            } else
+                return false;
+        }
     }
 }
