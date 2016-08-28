@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
@@ -16,7 +17,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -41,6 +44,8 @@ import androigati.eshare.utils.NoticeDialogFragment;
 import androigati.eshare.widget.ImageDialog;
 import androigati.eshare.widget.TextDialog;
 import de.rwth.R;
+import de.rwth.setups.EShareSetup;
+import system.ArActivity;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, NoticeDialogFragment.NoticeDialogListener, InotifyMapActivity {
 
@@ -58,6 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map_content_fragment);
         mapFragment.getMapAsync(this);
         locationProvider = new MyLocationProvider(MapsActivity.this, this);
+        Switch arSwitch = (Switch) findViewById(R.id.ar_switch);
     }
 
     @Override
@@ -67,6 +73,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (!checkEnableGPS()) {
             showAlertDialog();
         }
+        Switch arSwitch = (Switch) findViewById(R.id.ar_switch);
+        arSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            EShareSetup customSetup = new EShareSetup();
+                            ArActivity.startWithSetup(MapsActivity.this, customSetup);
+                        }
+                    }, 500);
+                }
+            }
+        });
+        arSwitch.setChecked(false);
     }
 
     @Override
@@ -160,8 +183,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         RecyclerView contentRecyclerView = (RecyclerView) findViewById(R.id.content_recycler_view);
                         contentRecyclerView.setLayoutManager(new LinearLayoutManager(MapsActivity.this));
                         contentRecyclerView.setAdapter(contentRecyclerViewAdapter);
-
-                        //mMap.moveCamera(CameraUpdateFactory.newLatLng(pos));
                     }
                 }
             }
@@ -262,20 +283,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     @Override
-    public void notifyLocationChanged(Location newlocation) {
+    public void notifyLocationChanged(Location newLocation) {
 
-        /*
-        if (updateReceived == false) {
-            MyArSetup customSetup = new MyArSetup(locationProvider);
-            List<Location> locs = new ArrayList<>();
-            Location further = new Location(newlocation);
-            further.setLongitude(newlocation.getLongitude() - 0.00001d);
-            further.setLatitude(newlocation.getLatitude() - 0.00001d);
-            locs.add(further);
-            customSetup.setLocations(locs);
-            ArActivity.startWithSetup(this, customSetup);
+        if (!updateReceived) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(
+                    newLocation.getLatitude(),
+                    newLocation.getLongitude())
+            ));
             updateReceived = true;
-        }*/
+        }
     }
 
     public class OnContentMarkerClickListener implements GoogleMap.OnMarkerClickListener {

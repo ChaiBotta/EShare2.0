@@ -5,7 +5,13 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.FrameLayout;
+import android.widget.Switch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +20,7 @@ import actions.ActionCalcRelativePos;
 import actions.ActionMoveCameraBuffered;
 import actions.ActionRotateCameraBuffered;
 import actions.ActionWASDMovement;
+import de.rwth.R;
 import geo.GeoObj;
 import gl.CustomGLSurfaceView;
 import gl.GL1Renderer;
@@ -34,20 +41,17 @@ import worldData.World;
  */
 public class EShareSetup extends Setup {
 
-    private  World world;
+    public final int MAX_NUM_ELEMENTS = 20;
+    private World world;
     private GLCamera camera;
-
     private ActionCalcRelativePos geoupdater;
     private ActionWASDMovement wasdAction;
     private ActionRotateCameraBuffered rotateAction;
-
     private List<Bitmap> images;
     private List<String> msgs;
 
-    public final int MAX_NUM_ELEMENTS = 20;
 
-
-    public EShareSetup(){
+    public EShareSetup() {
         images = new ArrayList<Bitmap>();
         msgs = new ArrayList<String>();
 
@@ -60,7 +64,6 @@ public class EShareSetup extends Setup {
     }
 
 
-
     @Override
     public void _b_addWorldsToRenderer(GL1Renderer glRenderer, GLFactory objectFactory, GeoObj currentPosition) {
 
@@ -68,14 +71,14 @@ public class EShareSetup extends Setup {
         world = new World(camera);
 
         List<MeshComponent> elements = new ArrayList<MeshComponent>();
-        int i=0;
-        for (Bitmap b: images
-             ) {
-            elements.add(makeImgMash("Image "+i, b));
+        int i = 0;
+        for (Bitmap b : images
+                ) {
+            elements.add(makeImgMash("Image " + i, b));
             i++;
         }
 
-        for (String msg: msgs
+        for (String msg : msgs
                 ) {
             elements.add(makeTextMash(msg, objectFactory, camera));
         }
@@ -84,23 +87,22 @@ public class EShareSetup extends Setup {
         makeRing(world, elements, currentPosition, 0);
 
 
-
         glRenderer.addRenderElement(world);
 
 
     }
 
 
-    public void AddImg(Bitmap img){
+    public void AddImg(Bitmap img) {
         images.add(img);
     }
 
-    public void AddText(String text){
+    public void AddText(String text) {
         msgs.add(text);
     }
 
 
-    public MeshComponent makeImgMash(String name, Bitmap img){
+    public MeshComponent makeImgMash(String name, Bitmap img) {
 
         //Bitmap bitmap = BitmapDecoder.decodeSampledBitmapFromResource(getActivity().getResources(), R.drawable.ascoli_piceno, 60, 60);
         MeshComponent mesh = GLFactory.getInstance().newTexturedSquare(name, img);
@@ -109,7 +111,7 @@ public class EShareSetup extends Setup {
         return mesh;
     }
 
-    public MeshComponent makeTextMash(String msg, GLFactory objectFactory, GLCamera glCamera){
+    public MeshComponent makeTextMash(String msg, GLFactory objectFactory, GLCamera glCamera) {
 
         float textSize = 1f;
 
@@ -121,7 +123,7 @@ public class EShareSetup extends Setup {
 
         v.setBackgroundColor(Color.TRANSPARENT);
 
-        v.setPadding(2, 0, 2,0);
+        v.setPadding(2, 0, 2, 0);
 
 
         v.setHorizontallyScrolling(false);
@@ -134,20 +136,20 @@ public class EShareSetup extends Setup {
         Obj o = new Obj();
         MeshComponent mesh = objectFactory.newTexturedSquare("textBitmap"
                 + msg, util.IO.loadBitmapFromView(v), textSize);
-        mesh.setPosition(new Vec(0,0,0));
+        mesh.setPosition(new Vec(0, 0, 0));
         mesh.addAnimation(new AnimationFaceToCamera(glCamera));
         return mesh;
     }
 
-    public void makeRing(World world, List<MeshComponent> elements,GeoObj currentPosition, int currRotation){
+    public void makeRing(World world, List<MeshComponent> elements, GeoObj currentPosition, int currRotation) {
 
-        int d=360/MAX_NUM_ELEMENTS;
+        int d = 360 / MAX_NUM_ELEMENTS;
 
         double r = 0.0001;
-        for (int i=currRotation, j=0; j < elements.size(); i+=d, j++) {
+        for (int i = currRotation, j = 0; j < elements.size(); i += d, j++) {
 
             MeshComponent currMesh = elements.get(j);
-            float x = (float)(r * Math.sin(Math.toRadians(i))), y = (float) (r * Math.cos(Math.toRadians(i)));
+            float x = (float) (r * Math.sin(Math.toRadians(i))), y = (float) (r * Math.cos(Math.toRadians(i)));
             float angle = (360 / MAX_NUM_ELEMENTS) * j + 90;
 
             //set position
@@ -156,7 +158,7 @@ public class EShareSetup extends Setup {
 
             //set rotation
             Vec oldRot = currMesh.getRotation();
-            currMesh.setRotation(new Vec(oldRot==null?0:oldRot.x,  oldRot==null?0:oldRot.y, angle));
+            currMesh.setRotation(new Vec(oldRot == null ? 0 : oldRot.x, oldRot == null ? 0 : oldRot.y, angle));
 
             geoObj.setComp(currMesh);
 
@@ -167,18 +169,18 @@ public class EShareSetup extends Setup {
     }
 
 
-    public void makeRing(World world, List<MeshComponent> elements, GeoObj currentPosition){
+    public void makeRing(World world, List<MeshComponent> elements, GeoObj currentPosition) {
 
 
         int numberOfElements = elements.size();
 
-        int d=360/numberOfElements;
+        int d = 360 / numberOfElements;
 
         double r = 0.0001;
-        for (int i=0, j=0; i< 360; i+=d, j++) {
+        for (int i = 0, j = 0; i < 360; i += d, j++) {
 
             MeshComponent currMesh = elements.get(j);
-            float x = (float)(r * Math.sin(Math.toRadians(i))), y = (float) (r * Math.cos(Math.toRadians(i)));
+            float x = (float) (r * Math.sin(Math.toRadians(i))), y = (float) (r * Math.cos(Math.toRadians(i)));
             float angle = (360 / numberOfElements) * j + 90;
 
             //set position
@@ -187,7 +189,7 @@ public class EShareSetup extends Setup {
 
             //set rotation
             Vec oldRot = currMesh.getRotation();
-            currMesh.setRotation(new Vec(oldRot==null?0:oldRot.x,  oldRot==null?0:oldRot.y, angle));
+            currMesh.setRotation(new Vec(oldRot == null ? 0 : oldRot.x, oldRot == null ? 0 : oldRot.y, angle));
 
             geoObj.setComp(currMesh);
 
@@ -199,11 +201,10 @@ public class EShareSetup extends Setup {
 
     @Override
     public void _c_addActionsToEvents(EventManager eventManager, CustomGLSurfaceView arView, SystemUpdater updater) {
-         wasdAction = new ActionWASDMovement(camera, 25f,
+        wasdAction = new ActionWASDMovement(camera, 25f,
                 50f, 20f);
         rotateAction = new ActionRotateCameraBuffered(
                 camera);
-
 
 
         arView.addOnTouchMoveAction(wasdAction);
@@ -225,5 +226,32 @@ public class EShareSetup extends Setup {
     @Override
     public void _e2_addElementsToGuiSetup(GuiSetup guiSetup, Activity activity) {
 
+    }
+
+    @Override
+    public void _e1_addElementsToOverlay(FrameLayout overlayView,
+                                         final Activity activity) {
+        LayoutInflater inflater = LayoutInflater.from(activity);
+        View switchView = inflater.inflate(R.layout.ar_switch, null);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(16, 16, 16, 16);
+        Switch arSwitch = (Switch) switchView.findViewById(R.id.ar_switch);
+        arSwitch.setChecked(true);
+        arSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (!isChecked) {
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            activity.finish();
+                        }
+                    }, 500);
+                }
+            }
+        });
+        overlayView.addView(switchView, layoutParams);
     }
 }
