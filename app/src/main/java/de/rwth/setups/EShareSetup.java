@@ -41,20 +41,20 @@ import worldData.World;
  */
 public class EShareSetup extends Setup {
 
-    public final int MAX_NUM_ELEMENTS = 20;
-    private World world;
+    private  World world;
     private GLCamera camera;
+
     private ActionCalcRelativePos geoupdater;
     private ActionWASDMovement wasdAction;
     private ActionRotateCameraBuffered rotateAction;
-    private List<Bitmap> images;
-    private List<String> msgs;
+
+    private List<ContentViewModel> contents;
+
+    public final int MAX_NUM_ELEMENTS = 20;
 
 
-    public EShareSetup() {
-        images = new ArrayList<Bitmap>();
-        msgs = new ArrayList<String>();
-
+    public EShareSetup(){
+        contents = new ArrayList<ContentViewModel>();
 
     }
 
@@ -62,6 +62,56 @@ public class EShareSetup extends Setup {
     public void _a_initFieldsIfNecessary() {
 
     }
+
+    public static class ContentViewModel{
+        private String title;
+        private String body;
+        private String url;
+        private String type;
+
+        public Bitmap getImg() {
+            return img;
+        }
+
+        public void setImg(Bitmap img) {
+            this.img = img;
+        }
+
+        private Bitmap img;
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+    }
+
 
 
     @Override
@@ -71,20 +121,28 @@ public class EShareSetup extends Setup {
         world = new World(camera);
 
         List<MeshComponent> elements = new ArrayList<MeshComponent>();
-        int i = 0;
-        for (Bitmap b : images
-                ) {
-            elements.add(makeImgMash("Image " + i, b));
-            i++;
-        }
+        int i=0;
 
-        for (String msg : msgs
-                ) {
-            elements.add(makeTextMash(msg, objectFactory, camera));
+
+        for (ContentViewModel content: contents
+             ) {
+
+            switch (content.getType()){
+                case "image":
+                    elements.add(makeImgMash(content.title, content.getImg()));
+                    break;
+                case "text":
+                    elements.add(makeTextMash(content.body, objectFactory,camera));
+                    break;
+                case "video":
+                    break;
+            }
+
         }
 
 
         makeRing(world, elements, currentPosition, 0);
+
 
 
         glRenderer.addRenderElement(world);
@@ -93,12 +151,8 @@ public class EShareSetup extends Setup {
     }
 
 
-    public void AddImg(Bitmap img) {
-        images.add(img);
-    }
-
-    public void AddText(String text) {
-        msgs.add(text);
+    public void AddElement(ContentViewModel content){
+        contents.add(content);
     }
 
 
